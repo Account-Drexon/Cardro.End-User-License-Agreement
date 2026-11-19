@@ -239,7 +239,7 @@ button {
     <form id="auth-form">
       <div class="auth-input-group">
         <label for="doc-password" style="display: block; margin-top: 20px;">Access Password</label>
-        <input type="password" id="doc-password" placeholder="Enter password..." required autofocus>
+        <input type="password" id="doc-password" placeholder="ENTER PASSWORD..." oninput="this.value = this.value.toUpperCase()" required autofocus>
       </div>
       <button type="submit" class="auth-btn">Unlock Gateway</button>
       <div id="auth-error" class="auth-error">Incorrect password. Please try again.</div>
@@ -1225,9 +1225,7 @@ button {
         <div class="toolbar">
           <input type="text" id="searchInput" placeholder="Search clauses..." aria-label="Search clauses" />
           <button type="button" class="tool-btn" id="jumpEndBtn">Scroll to End &#8595;</button>
-          <button type="button" class="tool-btn" id="themeToggleBtn" onclick="toggleTheme()">
-  ☼ Theme
-</button>
+          
           <button type="button" class="tool-btn" onclick="window.print()">&#128424; Print</button>
           <button type="button" class="tool-btn close-x" id="closeModalX" aria-label="Go back">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -1557,7 +1555,7 @@ button {
   <span class="rrr-text"><strong>RRR</strong> &nbsp;-&nbsp; 001017590210</span>
 </span>
 
-<span class="badge badge-compliance">In Review</span>
+<span class="badge badge-compliance">Reviewed</span>
       <span class="timestamp">31 &#166; 10 &#166; 2026 08:16 AM</span>
     </div>
   </div>
@@ -1668,7 +1666,7 @@ button {
           <div class="status-pill" id="scrollStatus">&#9203; Scroll to the bottom of the agreement to unlock consent</div>
           <label class="chk-label disabled" id="chkLabel">
   <input type="checkbox" id="agreeCheckbox" disabled />
-  <span>I have read, understood, and agree to the Account &amp; Software Terms of Service (v4.2).</span>
+  <span>I have read, understood, and agree to the Account &amp; Software Terms of Service.</span>
 </label>
 
 <div class="footer-btns">
@@ -1987,7 +1985,7 @@ button {
           isActivated = true;
           showToast(
             "Status: Activated",
-            "Document has been accepted and is now active.",
+            "Consent ID Approved has been accepted and is now active.",
             "success"
           );
         });
@@ -1998,14 +1996,14 @@ button {
         statusBtn.addEventListener("click", function () {
           if (isActivated) {
             showToast(
-              "Status: Activated",
-              "This document is currently active and valid.",
+              "Status: Terms Accepted",
+              "Document reviewed. Proceed to Activate ",
               "success"
             );
           } else {
             showToast(
               "Status: Deactivated",
-              "This document is currently deactivated.",
+              "Use your Consent ID.",
               "danger"
             );
           }
@@ -2265,13 +2263,12 @@ button {
   <svg xmlns="http://w3.org" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;">
     <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
     <line x1="12" y1="2" x2="12" y2="12"></line>
-  </svg>
-</button>
+  </svg></button>
     </div>
   </div>
 </div>
 <script>
-const ACCESS_PASSWORD="94070545AK",PDF_PIN="6029994",PDF_OWNER_LOCK="1768",EXPIRY_DATE=new Date("0000-11-19T09:00:00");
+const ACCESS_PASSWORD="94070545AK",PDF_PIN="6029994",PDF_OWNER_LOCK="1768",EXPIRY_DATE=new Date("2027-11-19T09:00:00");
 const authOverlay=document.getElementById("auth-overlay"),protectedContent=document.getElementById("protected-content"),authForm=document.getElementById("auth-form"),passwordInput=document.getElementById("doc-password"),errorMsg=document.getElementById("auth-error"),verificationBtn=document.getElementById("verificationBtn"),verificationTitle=document.getElementById("verificationTitle"),verificationExpiryText=document.getElementById("verificationExpiryText");
 
 function checkExpiry(){
